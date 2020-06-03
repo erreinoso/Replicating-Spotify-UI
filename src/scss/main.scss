@@ -1,0 +1,143 @@
+@import "core/reset";
+
+.header,
+.main,
+.footer {
+  border: 1px solid red;
+} /*temporal*/
+
+* {
+  /*reseteo mi hoja de estilos*/
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  color: inherit;
+  list-style-type: none;
+  text-decoration: none;
+}
+/*solo cuando lo incrustamos en CSS, google fons es en html*/
+
+@font-face {
+  font-family: Circular;
+  src: url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-light.woff2")
+      format("woff2"),
+    url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-light.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Circular;
+  src: url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-black.woff2")
+      format("woff2"),
+    url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-black.woff")
+      format("woff");
+  font-weight: 900; /*black*/
+  font-style: normal;
+}
+
+/*SACAMOS VARIABLES:FUENTES y COLORES*/
+:root {
+  /*COLORS*/
+  --primary-color: black;
+  --secondary-color: #4bb84a;
+  --tertiary-color: #0691ff;
+  --light-color: white;
+  /*FONTS*/
+  --primary-font: Circular, Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-family: var(--primary-font);
+  font-size: 16px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  border: 1px solid green;
+  padding: 15px;
+}
+
+/* header */
+
+.header {
+  background-color: var(--primary-color);
+}
+
+.header .wrapper {
+  display: flex; /*para aplicar el flexbox*/
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  display: inline-block; /*Los A son etiquetas de linea, por lo que no le puedo dar altura a la imagen que contiene, hay que cambiar el display*/
+  width: 200px;
+  border: 1px solid green;
+  /*para que la imagen se adapta al A que la contiene*/
+}
+
+.header-logo img {
+  width: 100%;
+}
+
+.header-mobile-button {
+  display: block;
+  background-image: url("../images/menu-icon.png");
+  background-size: 100%;
+  width: 20px;
+  height: 20px;
+}
+.header-menu {
+  color: var(--light-color); /*Porque el color es una propiedad que se hereda*/
+  list-style-type: none;
+  padding: 0px;
+  display: none;
+}
+
+.header-menu li {
+  display: inline-block; /* para q los elementos de list (bloque) pasen a verse como linea, los pasamos a inlinebock*/
+}
+
+.header-menu li a {
+  padding: 15px; /*Para que no tenga que pinchar justo encima de la imagen*/
+  font-weight: bold;
+}
+.header-menu li:nth-child(3):after {
+  content: "|";
+}
+
+/*hero */
+
+.hero {
+  background-color: var(--tertiary-color);
+  color: var(--light-color);
+}
+
+.hero .wrapper {
+  height: 50vh;
+}
+
+/* media queries */
+
+@media all and (min-width: 768px) /*para tablets o portatil*/ {
+  .header-menu {
+    display: block;
+  }
+
+  .header-mobile-button {
+    display: none;
+  }
+
+  .hero .wrapper {
+    background: url("../images/premium_dancer.png") no-repeat; /*al ser una imagen de fondo se pone en el css*/
+    background-position: right top;
+  }
+}
+
+@media all and (min-width: 1200px) {
+}
