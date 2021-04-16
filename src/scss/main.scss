@@ -1,143 +1,200 @@
-@import "core/reset";
+@import './layout/header';
+@import './layout/newsletter';
 
-.header,
-.main,
-.footer {
-  border: 1px solid red;
-} /*temporal*/
-
-* {
-  /*reseteo mi hoja de estilos*/
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
-  color: inherit;
-  list-style-type: none;
-  text-decoration: none;
-}
-/*solo cuando lo incrustamos en CSS, google fons es en html*/
-
+/* fonts */
 @font-face {
   font-family: Circular;
-  src: url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-light.woff2")
-      format("woff2"),
-    url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-light.woff")
-      format("woff");
+  src: url('https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-light.woff2')
+      format('woff2'),
+    url('https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-light.woff')
+      format('woff');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: Circular;
-  src: url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-black.woff2")
-      format("woff2"),
-    url("https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-black.woff")
-      format("woff");
-  font-weight: 900; /*black*/
+  src: url('https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-black.woff2')
+      format('woff2'),
+    url('https://sp-bootstrap.global.ssl.fastly.net/8.12.1/fonts/circular-black.woff')
+      format('woff');
+  font-weight: 900;
   font-style: normal;
 }
 
-/*SACAMOS VARIABLES:FUENTES y COLORES*/
-:root {
-  /*COLORS*/
-  --primary-color: black;
-  --secondary-color: #4bb84a;
-  --tertiary-color: #0691ff;
-  --light-color: white;
-  /*FONTS*/
-  --primary-font: Circular, Arial, Helvetica, sans-serif;
-}
+/* reset styles */
 
-html {
-  font-family: var(--primary-font);
+* {
+  box-sizing: border-box;
+  font-family: Circular, Arial, Helvetica, sans-serif;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
-.wrapper {
-  max-width: 1200px;
-  margin: auto;
-  width: 100%;
-  border: 1px solid green;
-  padding: 15px;
+a {
+  color: white;
+  text-decoration: none;
 }
 
-/* header */
-
-.header {
-  background-color: var(--primary-color);
+body {
+  margin: 0;
 }
 
-.header .wrapper {
-  display: flex; /*para aplicar el flexbox*/
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+/* main */
+
+.main {
+  margin-top: 60px; /* esto es lo que mide el header */
 }
 
-.header-logo {
-  display: inline-block; /*Los A son etiquetas de linea, por lo que no le puedo dar altura a la imagen que contiene, hay que cambiar el display*/
-  width: 200px;
-  border: 1px solid green;
-  /*para que la imagen se adapta al A que la contiene*/
-}
-
-.header-logo img {
-  width: 100%;
-}
-
-.header-mobile-button {
-  display: block;
-  background-image: url("../images/menu-icon.png");
-  background-size: 100%;
-  width: 20px;
-  height: 20px;
-}
-.header-menu {
-  color: var(--light-color); /*Porque el color es una propiedad que se hereda*/
-  list-style-type: none;
-  padding: 0px;
-  display: none;
-}
-
-.header-menu li {
-  display: inline-block; /* para q los elementos de list (bloque) pasen a verse como linea, los pasamos a inlinebock*/
-}
-
-.header-menu li a {
-  padding: 15px; /*Para que no tenga que pinchar justo encima de la imagen*/
-  font-weight: bold;
-}
-.header-menu li:nth-child(3):after {
-  content: "|";
-}
-
-/*hero */
+/* hero area */
 
 .hero {
-  background-color: var(--tertiary-color);
-  color: var(--light-color);
+  padding: 60px 30px 30px 30px;
+  background-color: #0691ff;
+  color: white;
 }
 
-.hero .wrapper {
-  height: 50vh;
+.hero-title {
+  max-width: 600px;
+  font-size: 3rem;
+  line-height: 55px;
+}
+
+.hero-subtitle {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.hero-plans {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 5px 25px;
+  border-radius: 50px;
+  background-color: #4bb84a;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.hero-policy {
+  display: block;
+  margin-top: 30px;
+  font-size: 10px;
+}
+
+/* benefits area */
+
+.benefits-title {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 50px auto;
+  max-width: 400px;
+}
+
+/* benefit item */
+
+.benefit {
+  display: flex;
+  align-items: left;
+  padding: 10px;
+}
+
+.benefit-img {
+  margin: 15px;
+  width: 100px;
+}
+
+.benefit-title {
+  font-size: 1.25rem;
+  line-height: 25px;
+}
+
+/* footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 15px;
+  background-color: black;
+}
+
+.footer,
+.footer * {
+  font-size: 10px;
+  color: #999;
+}
+
+.footer-menu-links:hover {
+  color: white;
+}
+
+.footer-menu-items {
+  display: inline-block;
+}
+
+.footer-menu-links {
+  display: inline-block;
+  padding: 7px;
+}
+
+/* copy */
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.copy-year {
+  margin-top: 5px;
+}
+
+.copy-spain-flag {
+  margin-left: 5px;
+  height: 15px;
+  vertical-align: text-bottom;
 }
 
 /* media queries */
 
-@media all and (min-width: 768px) /*para tablets o portatil*/ {
-  .header-menu {
-    display: block;
+@media all and (min-width: 768px) {
+  .hero {
+    background-image: url(../images/premium-dancer.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
   }
 
-  .header-mobile-button {
-    display: none;
+  .benefits {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 700px;
   }
 
-  .hero .wrapper {
-    background: url("../images/premium_dancer.png") no-repeat; /*al ser una imagen de fondo se pone en el css*/
-    background-position: right top;
+  .benefit {
+    width: 50%;
   }
 }
 
 @media all and (min-width: 1200px) {
+  .benefits {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 1000px;
+  }
+
+  .benefit {
+    display: block;
+  }
 }
