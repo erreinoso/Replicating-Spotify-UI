@@ -2,7 +2,7 @@
 
 This is our first project at Adalab Bootcamp.
 
-The goal was to build a simplified version of Spotify landing page:
+The goal was to build a simplified version of Spotify landing page.
 
 All the design is responsive and adaptable to all screen sizes.
 
@@ -40,5 +40,5 @@ In the project directory, type:
 This runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can also create a docs folder by running #### `npm run docs`
+You can also create a docs folder by running `npm run docs`
 
