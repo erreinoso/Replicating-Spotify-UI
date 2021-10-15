@@ -1,6 +1,4 @@
-## AdaWonders 🌈
-
-This is our first project at Adalab Bootcamp.
+## Spotify 🌈
 
 The goal was to build a simplified version of Spotify landing page.
 
